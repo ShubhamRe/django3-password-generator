@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container text-center">
+        <h1>This is the new home page.</h1>
+        <h2>First Name: {{ FirstName }}</h2>
+        <h2>Middle Name: {{ MiddleName }}</h2>
+        <h2>Last Name: {{ LastName }}</h2>
+        <!--<form action="/passwords">-->
+        <form action="{% url 'generatePassword' %}">
+            <select name="length">
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12" selected="selected">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+            </select>: Length
+            <br>
+            <br>
+            <input type="checkbox" name="uppercase">: Uppercase
+            <br>
+            <br>
+            <input type="checkbox" name="numbers">: Numbers
+            <br>
+            <br>
+            <input type="checkbox" name="spChars">: Special Characters
+            <br>
+            <br>
+            <input type="submit" class="btn btn-primary" value="Generate Password">
+        </form>
+        <br>
+        <br>
+        <a href="{% url 'aboutuspage' %}" class="btn btn-warning" name="aboutuspg">About Us</a>
+    </div>
+</body>
+</html>
